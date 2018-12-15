@@ -29,7 +29,9 @@ class AsideContainer extends React.Component {
                     placement={this.state.placement}
                     closable={false}
                     onClose={this.onClose}
-                    visible={this.state.visible}>
+                    visible={this.state.visible}
+                    // mask={false}
+                    >
                     <Menu
                         theme={this.state.theme}
                         onClick={this.handleClick}

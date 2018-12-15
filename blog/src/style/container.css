@@ -1,0 +1,8 @@
+.container_header {
+    width: 100%;
+    position: relative;
+    height: 50px;
+    background-color: rgb(24,114,114);
+    line-height: 50px;
+    text-align: right;
+}
