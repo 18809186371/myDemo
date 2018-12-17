@@ -9,6 +9,7 @@
     "mobx-react": "^5.4.3",
     "pubsub": "^3.2.1",
     "react": "^16.6.3",
+    "react-app-rewire-mobx": "^1.0.9",
     "react-color": "^2.14.1",
     "react-dom": "^16.6.3",
     "react-router-dom": "^4.3.1",

@@ -8,6 +8,9 @@ class AsideContainer extends React.Component {
         visible: false,
         placement: 'left'
     }
+    componentDidMount(){
+        
+    }
     constructor(props) {
         super(props)
     }
