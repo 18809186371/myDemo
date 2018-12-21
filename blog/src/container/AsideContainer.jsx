@@ -1,5 +1,5 @@
 import React from 'react'
-import { Menu, Icon, Drawer, Button } from 'antd';
+import { Menu, Icon, Drawer } from 'antd';
 import { observer } from "mobx-react";
 const SubMenu = Menu.SubMenu;
 
@@ -9,22 +9,20 @@ const AsideContainer = observer(class AsideContainer extends React.Component {
         super(props)
         this.state = {
             theme: 'light',
-            visible: false,
             placement: 'left'
         }
     }
-
-    showDrawer = () => {
-        this.setState({
-            visible: true,
-        });
+    componentDidMount(){
+        console.log(this.props.containerStore.sliderVisible)
     }
+
     onClose = () => {
         this.setState({
             visible: false,
         });
     }
     render() {
+        console.log(this.props.containerStore.sliderVisible,1111111111)
         return (
             <div>
                 <Drawer
@@ -32,7 +30,7 @@ const AsideContainer = observer(class AsideContainer extends React.Component {
                     placement={this.state.placement}
                     closable={false}
                     onClose={this.onClose}
-                    visible={this.state.visible}
+                    visible={this.props.containerStore.sliderVisible}
                     // mask={false}
                     >
                     <Menu
@@ -64,9 +62,9 @@ const AsideContainer = observer(class AsideContainer extends React.Component {
                         </SubMenu>
                     </Menu>
                 </Drawer>
-                <Button
+                {/* <Button
                     onClick={this.showDrawer}>按钮
-                </Button>
+                </Button> */}
             </div>
         );
     }
