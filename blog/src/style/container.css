@@ -2,7 +2,7 @@
     width: 100%;
     position: relative;
     height: 50px;
-    background-color: rgb(24,114,114);
     line-height: 50px;
     text-align: right;
+    box-shadow: 1px 1px 1px #888888
 }

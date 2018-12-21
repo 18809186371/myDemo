@@ -1,19 +1,19 @@
 import React from 'react'
 import { Menu, Icon, Drawer, Button } from 'antd';
+import { observer } from "mobx-react";
 const SubMenu = Menu.SubMenu;
 
-class AsideContainer extends React.Component {
-    state = {
-        theme: 'light',
-        visible: false,
-        placement: 'left'
-    }
-    componentDidMount(){
-        
-    }
-    constructor(props) {
+const AsideContainer = observer(class AsideContainer extends React.Component {
+    
+    constructor(props){
         super(props)
+        this.state = {
+            theme: 'light',
+            visible: false,
+            placement: 'left'
+        }
     }
+
     showDrawer = () => {
         this.setState({
             visible: true,
@@ -70,6 +70,6 @@ class AsideContainer extends React.Component {
             </div>
         );
     }
-}
+})
 
 export default AsideContainer
