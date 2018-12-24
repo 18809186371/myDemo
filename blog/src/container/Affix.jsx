@@ -1,8 +1,9 @@
 import React from 'react';
 import { Icon } from 'antd';
-import { observer } from "mobx-react";
+import { observer, inject } from "mobx-react";
 
-const Affix = observer(class Affix extends React.Component {
+@inject('containerStore')
+@observer class Affix extends React.Component {
     constructor(props) {
         super(props)
     }
@@ -16,5 +17,5 @@ const Affix = observer(class Affix extends React.Component {
             </span>
         </div>
     }
-})
+}
 export default Affix

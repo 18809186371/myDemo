@@ -1,15 +1,14 @@
 import React from 'react';
 import ColorSelect from '../modules/ColorSelect'
+import { observer, inject } from 'mobx-react'
 
-class HeadContainer extends React.Component {
+@inject('containerStore')
+@observer class HeadContainer extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             headColor: 'rgb(24,114,114)'
         }
-    }
-    componentDidMount() {
-
     }
     _updateColor = (color) => {
         this.props.containerStore.changeColor(color)

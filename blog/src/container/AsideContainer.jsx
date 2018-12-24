@@ -2,8 +2,8 @@ import React from 'react'
 import { Menu, Icon } from 'antd';
 import { observer, inject } from "mobx-react";
 const SubMenu = Menu.SubMenu;
-inject('containerStore')
-const AsideContainer = observer(class AsideContainer extends React.Component {
+@inject('containerStore')
+@observer class AsideContainer extends React.Component {
     
     constructor(props){
         super(props)
@@ -48,6 +48,6 @@ const AsideContainer = observer(class AsideContainer extends React.Component {
             </div>
         );
     }
-})
+}
 
 export default AsideContainer
