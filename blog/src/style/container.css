@@ -7,6 +7,14 @@
     box-shadow: 1px 1px 1px #888888
 }
 
+.container_header h2 {
+    position: absolute;
+    top: 0%;
+    left: 5%;
+    color: aliceblue;
+    font-family: '楷体';
+}
+
 .container_affix {
     position: fixed;
     right: 5%;

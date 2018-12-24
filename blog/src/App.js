@@ -10,7 +10,7 @@ class App extends Component {
     return (
       <Provider {...store}>
         <div>
-          <HeadContainer/>
+          <HeadContainer title={'shengG当年的demo'}/>
           <AsideContainer/>
           <Affix/>
         </div>

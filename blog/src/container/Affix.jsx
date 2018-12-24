@@ -6,6 +6,9 @@ import { observer, inject } from "mobx-react";
 @observer class Affix extends React.Component {
     constructor(props) {
         super(props)
+        this.state = {
+        
+        }
     }
     handleOnclick = () => {
         this.props.containerStore.changeVisible(!this.props.containerStore.sliderVisible)

@@ -15,7 +15,6 @@ const SubMenu = Menu.SubMenu;
     }
 
     render() {
-        // console.log(this.props.containerStore.sliderVisible,1111111111)
         return (
             <div>
                 <Menu
