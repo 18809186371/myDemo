@@ -8,13 +8,15 @@ export default class containerStore{
         this.headColor = headColor
     }
     // 控制侧边栏出入的函数
-    changeVisible = () => {
+    changeVisible = (sliderVisible) => {
+        console.log(sliderVisible)
         console.log(this.sliderVisible)
-        this.sliderVisible = !this.sliderVisible
+        this.sliderVisible = sliderVisible
     }
 }
 
 decorate(containerStore,{
     headColor: observable,
-    changeColor: action
+    changeColor: action,
+    changeVisible: action
 })
