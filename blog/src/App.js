@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter } from 'react-router-dom'
 import AsideContainer from './container/AsideContainer';
 import HeadContainer from './container/HeadContainer';
 import Affix from './container/Affix'
@@ -10,9 +11,11 @@ class App extends Component {
     return (
       <Provider {...store}>
         <div>
-          <HeadContainer title={'shengG当年的demo'}/>
-          <AsideContainer/>
-          <Affix/>
+          <HeadContainer title={'shengG当年的demo'} />
+          <AsideContainer />
+          <Affix />      
+          <BrowserRouter basename="shengG">
+          </BrowserRouter>
         </div>
       </Provider>
     );

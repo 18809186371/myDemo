@@ -20,3 +20,8 @@
     right: 5%;
     bottom: 5%;
 }
+
+.container_body {
+    background-color: #edf1f5;
+    padding: 10px;
+}

@@ -28,10 +28,10 @@ export default class ColorSelect extends React.Component {
         return (
             <div>
                 <button onClick={this.handleClick}
-                style={{ background: color, border: "none", lineHeight: "31px", height: 31, width: 45, verticalAlign: "middle" }}>
+                    style={{ background: color, border: "none", lineHeight: "31px", height: 31, width: 45, verticalAlign: "middle" }}>
                 </button>
                 {displayColorPicker === "block" ?
-                    <div style={{ position: "absolute", zIndex: 66 }}>
+                    <div style={{ position: "absolute", zIndex: 66, top: 50, right: 5 }}>
                         <SketchPicker color={this.state.color} onChange={this.handleChange} />
                     </div> : null
                 }
