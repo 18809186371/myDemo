@@ -1,11 +1,12 @@
 import React from 'react'
 import { Menu, Icon } from 'antd';
+import { Link, withRouter } from 'react-router-dom';
 import { observer, inject } from "mobx-react";
 const SubMenu = Menu.SubMenu;
 @inject('containerStore')
 @observer class AsideContainer extends React.Component {
-    
-    constructor(props){
+
+    constructor(props) {
         super(props)
         this.state = {
             theme: 'light',
@@ -21,11 +22,11 @@ const SubMenu = Menu.SubMenu;
                     theme={this.state.theme}
                     mode="inline"
                     inlineCollapsed={this.props.containerStore.sliderVisible}
-                    style={{ width: this.props.containerStore.sliderVisible? 100 : 195, height: this.height }}
+                    style={{ width: this.props.containerStore.sliderVisible ? 100 : 195, height: this.height }}
                 >
                     <SubMenu key="" title={<span><Icon type="mail" /><span>Navigation One</span></span>}>
-                        <Menu.Item key="1">Option 1</Menu.Item>
-                        <Menu.Item key="2">Option 2</Menu.Item>
+                        <Menu.Item key="1"><Link to="/home">Option 1</Link></Menu.Item>
+                        <Menu.Item key="2"><Link to="/set">Option 2</Link></Menu.Item>
                         <Menu.Item key="3">Option 3</Menu.Item>
                         <Menu.Item key="4">Option 4</Menu.Item>
                     </SubMenu>
@@ -49,4 +50,4 @@ const SubMenu = Menu.SubMenu;
     }
 }
 
-export default AsideContainer
+export default withRouter(AsideContainer)

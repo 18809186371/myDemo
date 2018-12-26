@@ -9,7 +9,7 @@ class App extends Component {
     return (
       <Provider {...store}>
         <BrowserRouter>
-          <Root basename="/static"/>
+          <Root/>
         </BrowserRouter>
       </Provider>
     );

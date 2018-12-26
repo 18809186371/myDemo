@@ -1,5 +1,6 @@
 import React from 'react';
 import { observer, inject } from "mobx-react";
+import SwitchComponent from './SwitchComponent';
 
 @inject('containerStore')
 @observer class Banner extends React.Component {
@@ -12,7 +13,7 @@ import { observer, inject } from "mobx-react";
         let width = this.props.containerStore.sliderVisible ? this.width - 120 : this.width - 215;
         return <div className="container_body" style={{ height: this.height, width }}>
             <div className="container_core">
-                
+                <SwitchComponent />
             </div>
         </div>
     }

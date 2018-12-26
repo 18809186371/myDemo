@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom'
 import AsideContainer from '../container/AsideContainer';
 import HeadContainer from '../container/HeadContainer';
 import Affix from '../container/Affix';
@@ -15,4 +16,4 @@ class Root extends React.Component {
     }
 }
 
-export default Root
+export default withRouter(Root)
