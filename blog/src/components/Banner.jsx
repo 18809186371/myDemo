@@ -1,6 +1,7 @@
 import React from 'react';
 import { observer, inject } from "mobx-react";
 import SwitchComponent from './SwitchComponent';
+import { withRouter } from 'react-router-dom';
 
 @inject('containerStore')
 @observer class Banner extends React.Component {
@@ -18,4 +19,4 @@ import SwitchComponent from './SwitchComponent';
         </div>
     }
 }
-export default Banner
+export default withRouter(Banner)

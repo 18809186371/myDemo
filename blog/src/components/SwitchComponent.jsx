@@ -11,11 +11,10 @@ class SwitchComponent extends React.Component {
         }
     }
     render() {
-        return <div><Switch>
-                <Route path="/home" component={HomeComponent} />
-                <Route path="/set" component={SettingComponent} />
-            </Switch>
-        </div>
+        return <Switch>
+            <Route path="/home" component={HomeComponent} />
+            <Route path="/set" component={SettingComponent} />
+        </Switch>
     }
 }
 
