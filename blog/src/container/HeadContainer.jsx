@@ -10,12 +10,9 @@ import { observer, inject } from 'mobx-react'
             
         }
     }
-    _updateColor = (color) => {
-        this.props.containerStore.changeColor(color)
-    }
     render() {
         return <div className="container_header" style={{ backgroundColor: this.props.containerStore.headColor }}>
-            <ColorSelect updateColor={(color) => this._updateColor(color)} />
+            <ColorSelect updateColor={(color) => this.props.containerStore.changeColor(color)} />
             <h2>{this.props.title}</h2>
         </div>
     }
