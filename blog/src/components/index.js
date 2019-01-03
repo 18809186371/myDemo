@@ -12,14 +12,17 @@ import { observer, inject } from 'mobx-react';
     constructor(props) {
         super(props)
         this.state = {}
+        this.userInfo = sessionStorage.getItem('userInfo')
     }
     render() {
-        return this.props.loginStore.loginFlag ? <React.Fragment>
-            <HeadContainer title={'shengG当年的demo'} />
-            <AsideContainer />
-            <Affix />
-            <Banner />
-        </React.Fragment> : <LogonContainer />
+        console.log(this.props.loginStore.loginFlag, this.userInfo)
+        return this.props.loginStore.loginFlag || this.userInfo === 'admin' ?
+            <React.Fragment>
+                <HeadContainer title={'shengG当年的demo'} />
+                <AsideContainer />
+                <Affix />
+                <Banner />
+            </React.Fragment> : <LogonContainer />
     }
 }
 

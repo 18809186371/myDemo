@@ -15,7 +15,6 @@ const SubMenu = Menu.SubMenu;
     }
 
     render() {
-        console.log(this.props)
         return (
             <div>
                 <Menu

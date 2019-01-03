@@ -33,3 +33,9 @@
 .container_body .container_core {
     padding: 10px;
 }
+.container_login {
+    width: 200px;
+    position: absolute;
+    top: 35%;
+    left: 45%;
+}

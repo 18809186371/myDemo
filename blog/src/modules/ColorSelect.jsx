@@ -33,8 +33,7 @@ export default class ColorSelect extends React.Component {
                 {displayColorPicker === "block" ?
                     <div style={{ position: "absolute", zIndex: 66, top: 50, right: 5 }}>
                         <SketchPicker color={this.state.color} onChange={this.handleChange} />
-                    </div> : null
-                }
+                    </div> : null}
             </div>
         );
     }
