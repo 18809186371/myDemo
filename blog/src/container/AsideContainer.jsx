@@ -9,13 +9,13 @@ const SubMenu = Menu.SubMenu;
     constructor(props) {
         super(props)
         this.state = {
-            theme: 'light',
-            collapsed: false
+            theme: 'light'
         }
         this.height = document.documentElement.offsetHeight - 50
     }
 
     render() {
+        console.log(this.props)
         return (
             <div>
                 <Menu
