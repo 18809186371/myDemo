@@ -21,7 +21,6 @@ export default class ColorSelect extends React.Component {
     handleChange = (value) => {
         let color = value.hex;
         this.setState({ color })
-
     }
     render() {
         let { color, displayColorPicker } = this.state;

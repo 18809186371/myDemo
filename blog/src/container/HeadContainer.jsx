@@ -1,9 +1,10 @@
 import React from 'react';
 import ColorSelect from '../modules/ColorSelect'
 import { observer, inject } from 'mobx-react'
-import { Avatar, Dropdown, Menu } from 'antd';
+import { Avatar, Dropdown, Menu, Modal } from 'antd';
 
-@inject('containerStore','loginStore')
+const confirm = Modal.confirm;
+@inject('containerStore', 'loginStore')
 @observer class HeadContainer extends React.Component {
     constructor(props) {
         super(props)
@@ -11,10 +12,20 @@ import { Avatar, Dropdown, Menu } from 'antd';
 
         }
     }
+
     handleLogOff = (e) => {
-        e.preventDefault();
-        this.props.loginStore.handleLogOff()
-        sessionStorage.removeItem('userInfo')
+        e.preventDefault()
+        let _this = this
+        confirm({
+            title: 'Do you want to logout?',
+            onOk() {
+                _this.props.loginStore.handleLogOff()
+                sessionStorage.removeItem('userInfo')
+            },
+            onCancel() {
+                
+            }
+        })
     }
     render() {
         const menu = (<Menu>
@@ -26,7 +37,8 @@ import { Avatar, Dropdown, Menu } from 'antd';
             <ColorSelect updateColor={(color) => this.props.containerStore.changeColor(color)} />
             <Dropdown overlay={menu}>
                 <Avatar src={"https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"}
-                    icon="user" style={{ position: "absolute", right: 60, top: 10, backgroundColor: '#fff' }} />
+                    icon="user"
+                    style={{ position: "absolute", right: 60, top: 10, backgroundColor: '#fff' }} />
             </Dropdown>
             <h2>{this.props.title}</h2>
         </div>

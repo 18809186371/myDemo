@@ -1,9 +1,9 @@
 
 import { action, observable } from 'mobx';
 
-export default class containerStore{
+export default class containerStore {
     @observable headColor = 'rgb(24,114,114)'
-    @observable sliderVisible = false // 侧边栏初始状态
+    @observable sliderVisible = true // 侧边栏初始状态
     @action changeColor = (headColor) => {
         this.headColor = headColor
     }

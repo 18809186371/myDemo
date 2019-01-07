@@ -24,10 +24,10 @@ const SubMenu = Menu.SubMenu;
                     style={{ width: this.props.containerStore.sliderVisible ? 100 : 195, height: this.height }}
                 >
                     <SubMenu key="" title={<span><Icon type="mail" /><span>Navigation One</span></span>}>
-                        <Menu.Item key="1"><Link to="/home">Option 1</Link></Menu.Item>
-                        <Menu.Item key="2"><Link to="/set">Option 2</Link></Menu.Item>
-                        <Menu.Item key="3">Option 3</Menu.Item>
-                        <Menu.Item key="4">Option 4</Menu.Item>
+                        <Menu.Item key="1"><Link to="/home">List</Link></Menu.Item>
+                        <Menu.Item key="2"><Link to="/set">Set</Link></Menu.Item>
+                        <Menu.Item key="3"><Link to="/scroll">Scroll</Link></Menu.Item>
+                        <Menu.Item key="4"><Link to="/show">Show</Link></Menu.Item>
                     </SubMenu>
                     <SubMenu key="sub2" title={<span><Icon type="appstore" /><span>Navigtion Two</span></span>}>
                         <Menu.Item key="5">Option 5</Menu.Item>
