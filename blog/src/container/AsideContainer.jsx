@@ -16,7 +16,7 @@ const SubMenu = Menu.SubMenu;
 
     render() {
         return (
-            <div>
+            <React.Fragment>
                 <Menu
                     theme={this.state.theme}
                     mode="inline"
@@ -30,7 +30,7 @@ const SubMenu = Menu.SubMenu;
                         <Menu.Item key="4"><Link to="/show">Show</Link></Menu.Item>
                     </SubMenu>
                     <SubMenu key="sub2" title={<span><Icon type="appstore" /><span>Navigtion Two</span></span>}>
-                        <Menu.Item key="5">Option 5</Menu.Item>
+                        <Menu.Item key="5"><Link to="/dnd">beautiful_dnd</Link></Menu.Item>
                         <Menu.Item key="6">Option 6</Menu.Item>
                         <SubMenu key="sub3" title="Submenu">
                             <Menu.Item key="7">Option 7</Menu.Item>
@@ -44,7 +44,7 @@ const SubMenu = Menu.SubMenu;
                         <Menu.Item key="12">Option 12</Menu.Item>
                     </SubMenu>
                 </Menu>
-            </div>
+            </React.Fragment>
         );
     }
 }

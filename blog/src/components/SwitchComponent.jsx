@@ -4,6 +4,7 @@ import ListComponent from './ListComponent/ListComponent';
 import SettingComponent from './SettingComponent/SettingComponent';
 import ScrollComponent from './ScrollComponent/ScrollComponent';
 import ShowDataComponent from './ShowDataComponent/ShowDataComponent';
+import DndComponent from './DndComponent/DndComponent';
 
 class SwitchComponent extends React.Component {
     constructor(props) {
@@ -18,6 +19,7 @@ class SwitchComponent extends React.Component {
             <Route path="/set" component={SettingComponent} />
             <Route path="/scroll" component={ScrollComponent} />
             <Route path="/show" component={ShowDataComponent} />
+            <Route path="/dnd" component={DndComponent} />
         </Switch>
     }
 }
