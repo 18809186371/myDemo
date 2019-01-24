@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { ContextMenu, MenuItem, ContextMenuTrigger } from "react-contextmenu";
 
 class SettingComponent extends React.Component {
     constructor(props) {
@@ -8,6 +9,9 @@ class SettingComponent extends React.Component {
 
         }
     }
+    _handleClick1 = (e,i,o) => {
+        console.log(i,o)
+    }
     render() {
         const data = [];
         for (let i = 0; i < 45; i++) {
@@ -15,12 +19,26 @@ class SettingComponent extends React.Component {
                 key: i,
                 title: `SettingComponent${i}`,
                 age: 24,
-                gender: i%2 === 0? '男': '女'
+                gender: i % 2 === 0 ? '男' : '女'
             })
         }
-        return <React.Fragment>
+        return <div>
+        <ContextMenuTrigger id="some_unique_identifier">
             {data.map(item => <h2 key={item.key}>{item.title}</h2>)}
-        </React.Fragment>
+        </ContextMenuTrigger>
+        <ContextMenu id="some_unique_identifier">
+            <MenuItem data={{ foo: 'bar' }} onClick={this._handleClick1}>
+                ContextMenu Item 1
+            </MenuItem>
+            <MenuItem data={{ foo: 'bar' }} onClick={this._handleClick2}>
+                ContextMenu Item 2
+            </MenuItem>
+            <MenuItem divider />
+            <MenuItem data={{ foo: 'bar' }} onClick={this._handleClick3}>
+                ContextMenu Item 3
+            </MenuItem>
+        </ContextMenu>
+        </div>
     }
 }
 
