@@ -6,6 +6,7 @@ import Affix from '../container/Affix';
 import Banner from './Banner';
 import LogonContainer from '../container/LoginContainer';
 import { observer, inject } from 'mobx-react';
+import { haderTitle } from '../userConfig';
 
 @inject('loginStore')
 @observer class Root extends React.Component {
@@ -18,7 +19,7 @@ import { observer, inject } from 'mobx-react';
         console.log(this.props.loginStore.loginFlag, this.userInfo)
         return this.props.loginStore.loginFlag || this.userInfo === 'admin' ?
             <React.Fragment>
-                <HeadContainer title={'shengG当年的demo'} />
+                <HeadContainer title={haderTitle} />
                 <AsideContainer />
                 <Affix />
                 <Banner />
