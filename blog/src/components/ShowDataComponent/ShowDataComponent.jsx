@@ -3,10 +3,36 @@ import { withRouter } from 'react-router-dom';
 import { Table } from 'antd';
 import { ContextMenu, MenuItem, ContextMenuTrigger } from "react-contextmenu";
 
+
+class BodyRow extends React.Component {
+    render() {
+        const {...restProps} = this.props;
+        const style = {...restProps.style};
+        let className = restProps.className;
+        return (
+            <ContextMenuTrigger id="table_right_click">
+                <tr
+                    {...restProps}
+                    style={style}
+                    className={className}
+                />
+            </ContextMenuTrigger>
+        )
+    }
+}
+
+
+const ContextBodyRow = BodyRow;
+
 class ShowDataComponent extends React.Component {
     constructor(props) {
         super(props)
         this.state = {}
+    }
+    components = {
+        body: {
+            row: ContextBodyRow,
+        },
     }
     render() {
         const data = [];
@@ -15,7 +41,7 @@ class ShowDataComponent extends React.Component {
                 key: i,
                 title: `shenG${i}号`,
                 age: 24,
-                address: `雁塔区西影路${i}号`,
+                address: `雁塔区西影路${i}号aaaaaa`,
                 gender: i % 2 === 0 ? '男' : '女'
             })
         }
@@ -38,10 +64,9 @@ class ShowDataComponent extends React.Component {
             key: 'gender'
         }];
 
-        return <div><ContextMenuTrigger id="table_right_click">
-            <Table dataSource={data} columns={columns} />
-        </ContextMenuTrigger>
-            <ContextMenu id="some_unique_identifier">
+        return <div>
+            <Table dataSource={data} columns={columns} components={this.components}/>
+            <ContextMenu id="table_right_click">
                 <MenuItem data={{ foo: 'bar' }} onClick={this._handleClick1}>
                     ContextMenu Item 1
                 </MenuItem>
@@ -53,7 +78,7 @@ class ShowDataComponent extends React.Component {
                     ContextMenu Item 3
                 </MenuItem>
             </ContextMenu>
-        </div>
+        </div >
     }
 }
 
