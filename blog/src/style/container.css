@@ -54,9 +54,30 @@
     top: 300px;
     left: 40%;
 }
+.contain_button_group{
+    top: 6%;
+    right: 2%;
+    position: fixed;
+    z-index: 999;
+}
 .container_card {
     padding: 10px;
+}
+.container_card h4 {
     text-align: center;
+}
+
+/* 这是个人中心Info卡片中的span样式 */
+.container_card_span {
+    padding-left: 10px;
+}
+
+/* userCenter页面Tabs页容器 */
+.container_tabs_container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    left: 270px;
 }
 
 /* 这是container_body 的滚动条样式 */

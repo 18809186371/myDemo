@@ -29,15 +29,15 @@ const SubMenu = Menu.SubMenu;
                         <Menu.Item key="3"><Link to="/show/scroll">Scroll</Link></Menu.Item>
                         <Menu.Item key="4"><Link to="/show/data">Show</Link></Menu.Item>
                     </SubMenu>
-                    <SubMenu key="sub2" title={<span><Icon type="appstore" /><span>Navigtion Two</span></span>}>
-                        <Menu.Item key="5"><Link to="/dnd">beautiful_dnd</Link></Menu.Item>
+                    <SubMenu key="sub2" title={<span><Icon type="table" /><span>Navigtion Two</span></span>}>
+                        <Menu.Item key="5"><Link to="/dnd">右键表格</Link></Menu.Item>
                         <Menu.Item key="6">Option 6</Menu.Item>
                         <SubMenu key="sub3" title="Submenu">
                             <Menu.Item key="7">Option 7</Menu.Item>
                             <Menu.Item key="8">Option 8</Menu.Item>
                         </SubMenu>
                     </SubMenu>
-                    <SubMenu key="sub3" title={<span><Icon type="setting" /><span>Navigation Three</span></span>}>
+                    <SubMenu key="sub3" title={<span><Icon type="appstore" /><span>Navigation Three</span></span>}>
                         <Menu.Item key="9">Option 9</Menu.Item>
                         <Menu.Item key="10">Option 10</Menu.Item>
                     </SubMenu>
