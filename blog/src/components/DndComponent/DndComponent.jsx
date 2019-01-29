@@ -6,10 +6,43 @@ class DndComponent extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      visible: false
+      visible: false,
+      keyCtrlFlag: false,
+      keyShiftFlag: false,
+      ctrlSelectArr: []
     }
     this.left = 0;
     this.top = 0;
+  }
+
+  componentDidMount() {
+    window.addEventListener('keydown', this._onKeyDown)
+    window.addEventListener('keyup', this._onKeyUp)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('keydown', this._onKeyDown)
+    window.removeEventListener('keyup', this._onKeyUp)
+  }
+
+  _onKeyDown = (e) => {
+    if (e.keyCode === 17) {
+      this.setState({ keyCtrlFlag: true })
+    } else if (e.keyCode === 16) {
+      console.log('shift')
+    } else {
+      return
+    }
+  }
+
+  _onKeyUp = (e) => {
+    if (e.keyCode === 17) {
+      this.setState({ keyCtrlFlag: false })
+    } else if (e.keyCode === 16) {
+      console.log('shift2')
+    } else {
+      return
+    }
   }
 
   _rightClick = (e) => {
@@ -19,13 +52,20 @@ class DndComponent extends React.Component {
     this.setState({ visible: true })
   }
 
-  _handleClick = (e,record) => {
-    console.log(e,record)
-    this.setState({ visible: false })
+  _handleClick = (e, record) => {
+    if (this.state.keyCtrlFlag) {
+      if (this.state.ctrlSelectArr.length === 0) {
+        this.setState({ ctrlSelectArr: [record.key] })
+      } else {
+        this.state.ctrlSelectArr.push(record.key)
+      }
+    } else { // 如果只点击左键，则清空ctrlSelectArr中储存的数据
+      this.setState({ visible: false, ctrlSelectArr: [] })
+    }
   }
 
   _handleConsole = () => {
-    console.log(1)
+    console.log(this.state.ctrlSelectArr)
   }
 
   render() {
@@ -94,8 +134,8 @@ class DndComponent extends React.Component {
       </div>
       <Table dataSource={data} pagination={false} columns={columns} onRow={(record, text) => {
         return {
-          onContextMenu: (e) => { this._rightClick(e,record, text) },
-          onClick: (e) => { this._handleClick(e,record) }
+          onContextMenu: (e) => { this._rightClick(e, record, text) },
+          onClick: (e) => { this._handleClick(e, record) }
         }
       }} />
     </div>

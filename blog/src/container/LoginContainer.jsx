@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form, Icon, Input, Button, message } from 'antd';
+import { username, password } from '../userConfig';
 import { observer, inject } from "mobx-react";
 
 message.config({ top: 300 })
@@ -14,7 +15,7 @@ message.config({ top: 300 })
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
             if (!err) {
-                if(values.userName === 'admin' && values.password === 'qaz.1234'){
+                if(values.userName === username && values.password === password){
                     setTimeout(() => this.props.loginStore.loginSubmit(),500)
                     sessionStorage.setItem('userInfo', 'admin')
                 } else {
