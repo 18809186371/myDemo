@@ -6,7 +6,9 @@ import ScrollComponent from './ScrollComponent/ScrollComponent';
 import ShowDataComponent from './ShowDataComponent/ShowDataComponent';
 import DndComponent from './DndComponent/DndComponent';
 import UserCenterComponent from './UserCenterComponent/UserCenterComponent';
-import UserSettingComponent from './UserSettingComponent/UserSettingComponent'; 
+import UserSettingComponent from './UserSettingComponent/UserSettingComponent';
+import reChartsComponent from './reChartsComponent/reChartsComponent';
+import BarChartsComponent from './BarChartsComponent/BarChartsComponent';
 
 class SwitchComponent extends React.Component {
     constructor(props) {
@@ -21,9 +23,11 @@ class SwitchComponent extends React.Component {
             <Route path="/show/set" component={SettingComponent} />
             <Route path="/show/scroll" component={ScrollComponent} />
             <Route path="/show/data" component={ShowDataComponent} />
-            <Route path="/dnd" component={DndComponent} />
+            <Route path="/view/dnd" component={DndComponent} />
             <Route path="/user/center" component={UserCenterComponent} />
             <Route path="/user/setting" component={UserSettingComponent} />
+            <Route path="/view/charts" component={reChartsComponent} />
+            <Route path="/view/bar" component={BarChartsComponent} />
         </Switch>
     }
 }

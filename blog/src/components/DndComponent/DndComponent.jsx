@@ -54,10 +54,16 @@ class DndComponent extends React.Component {
 
   _handleClick = (e, record) => {
     if (this.state.keyCtrlFlag) {
-      if (this.state.ctrlSelectArr.length === 0) {
-        this.setState({ ctrlSelectArr: [record.key] })
-      } else {
-        this.state.ctrlSelectArr.push(record.key)
+      // 重复选择的话，就要从已选择的数组中剔除此key
+      if(this.state.ctrlSelectArr.includes(record.key)){
+        let ctrlSelectArr = this.state.ctrlSelectArr.filter(item => item !== record.key)
+        this.setState({ ctrlSelectArr })
+      }else {
+        if (this.state.ctrlSelectArr.length === 0) {
+          this.setState({ ctrlSelectArr: [record.key] })
+        } else {
+          this.state.ctrlSelectArr.push(record.key)
+        }
       }
     } else { // 如果只点击左键，则清空ctrlSelectArr中储存的数据
       this.setState({ visible: false, ctrlSelectArr: [] })

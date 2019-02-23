@@ -7,4 +7,5 @@ ant-design3.11.2<br>
 react-router-dom4<br>
 mobx-react<br>
 react-color<br>
+recharts<br>
 pubsub
