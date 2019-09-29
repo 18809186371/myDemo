@@ -1,7 +1,9 @@
 import React from 'react';
 import { Form, Icon, Input, Button, message } from 'antd';
-import { username, password } from '../userConfig';
 import { observer, inject } from "mobx-react";
+import axios from 'axios';
+import { requestUrl } from '../util/config';
+import { withRouter } from 'react-router-dom'
 
 message.config({ top: 300 })
 @inject('loginStore')
@@ -15,12 +17,16 @@ message.config({ top: 300 })
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
             if (!err) {
-                if(values.userName === username && values.password === password){
-                    setTimeout(() => this.props.loginStore.loginSubmit(),500)
-                    sessionStorage.setItem('userInfo', 'admin')
-                } else {
-                    message.error('密码错误')
-                }
+                let param = { username: values.userName, password: values.password }
+                axios.post(`${requestUrl}/api/login`, param).then(res => {
+                    if(res.data.errorCode === '1') {
+                        window.setTimeout(message.success(res.data.errMsg), 500)
+                        this.props.loginStore.loginSubmit()
+                        this.props.history.push('/protal/show/home')
+                    } else {
+                        message.error(res.data.errMsg)
+                    }
+                }) 
             }
         });
     }
@@ -52,4 +58,4 @@ message.config({ top: 300 })
 }
 
 const LoginFrom = Form.create()(LoginContainer);
-export default LoginFrom
+export default withRouter(LoginFrom)

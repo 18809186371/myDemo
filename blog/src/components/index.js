@@ -16,8 +16,7 @@ import { haderTitle } from '../userConfig';
         this.userInfo = sessionStorage.getItem('userInfo')
     }
     render() {
-        console.log(this.props.loginStore.loginFlag, this.userInfo)
-        return this.props.loginStore.loginFlag || this.userInfo === 'admin' ?
+        return this.props.loginStore.loginFlag?
             <React.Fragment>
                 <HeadContainer title={haderTitle} />
                 <AsideContainer />

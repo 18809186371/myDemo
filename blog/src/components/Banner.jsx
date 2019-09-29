@@ -13,7 +13,6 @@ import { withRouter } from 'react-router-dom';
     render() {
         let width = this.props.containerStore.sliderVisible ? this.width - 120 : this.width - 215;
         return <div className="container_body" style={{ height: this.height, width }}>
-            {/* <div className="caontainer_mask"></div> */}
             <div className="container_core">
                 <div className="container_progress"></div>
                 <SwitchComponent />
