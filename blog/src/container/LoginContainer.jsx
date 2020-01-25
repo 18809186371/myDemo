@@ -32,6 +32,7 @@ message.config({ top: 300 })
     }
 
     render() {
+        // 11111
         const { getFieldDecorator } = this.props.form;
         return <div className="container_login">
             <Form onSubmit={this.handleSubmit} className="login-form">
