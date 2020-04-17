@@ -1,51 +1,63 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
-import { List } from 'antd';
+import DrogHoc from '../DragHoc';
+import CanvasHoc from '../CanvasHoc';
+import ChildList from './childList';
+import { inject, observer } from 'mobx-react';
+import EditFormArea from './EditFormArea';
 
-class HomeComponent extends React.Component {
+// 此处导入可编辑组件
+import EditImage from '../../EditableCom/img/index';
+import { toJS } from 'mobx';
+
+@inject('dataJson')
+@observer
+class VirginDrogComponent extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
 
         }
     }
+
+    componentDidMount(){
+
+    }
+
+    _renderEditCom = (list) =>  {
+        return list.map((item,index) => {
+            switch(item.type) {
+                case 'img': 
+                    return <DrogHoc key={index}><EditImage {...this.props.dataJson.img} /></DrogHoc> // 这块写的有问题
+            }
+        })
+    }
+
     render() {
-        const data = [
-            'Racing car sprays burning fuel into crowd.',
-            'Japanese princess to wed commoner.',
-            'Australian walks 100km after outback crash.',
-            'Man charged over missing wedding girl.',
-            'Los Angeles battles huge wildfires.',
-        ];
         return <React.Fragment>
-            <h3 style={{ marginBottom: 16 }}>Default Size</h3>
-            <List
-                header={<div>Header</div>}
-                footer={<div>Footer</div>}
-                bordered
-                dataSource={data}
-                renderItem={item => (<List.Item>{item}</List.Item>)}
-            />
-            <h3 style={{ margin: '16px 0' }}>Small Size</h3>
-            <List
-                size="small"
-                header={<div>Header</div>}
-                footer={<div>Footer</div>}
-                bordered
-                dataSource={data}
-                renderItem={item => (<List.Item>{item}</List.Item>)}
-            />
-            <h3 style={{ margin: '16px 0' }}>Large Size</h3>
-            <List
-                size="large"
-                header={<div>Header</div>}
-                footer={<div>Footer</div>}
-                bordered
-                dataSource={data}
-                renderItem={item => (<List.Item>{item}</List.Item>)}
-            />
+            <ChildList />
+            <CanvasHoc className="canvasContainer">
+                <div>
+                    {/* <DrogHoc>
+                        <div id="box" style={styles.drogBox}></div>
+                    </DrogHoc> */}
+                    {/* <DrogHoc>
+                        <img style={{ width: 100, height: 100, position: 'absolute',left: 100, zIndex: 999 }} src="https://img.alicdn.com/imgextra/i1/1928865133/O1CN01oin9A41nmxWMSskfG_!!1928865133.jpg" alt="3.jpg" />
+                    </DrogHoc> */}
+                    {this._renderEditCom(toJS(this.props.dataJson.json.data.children))}
+                </div>
+            </CanvasHoc>
+            <EditFormArea />
         </React.Fragment>
     }
 }
 
-export default withRouter(HomeComponent)
+const styles = {
+    drogBox: {
+        width: 100,
+        height: 100,
+        backgroundColor: 'red'
+    }
+}
+
+export default withRouter(VirginDrogComponent)

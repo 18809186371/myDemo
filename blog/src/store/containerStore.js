@@ -11,4 +11,8 @@ export default class containerStore {
     @action changeVisible = (sliderVisible) => {
         this.sliderVisible = sliderVisible
     }
+    @observable DrawerVisible = false
+    @action changeDrawerVisible = () => {
+        this.DrawerVisible = !this.DrawerVisible
+    }
 }

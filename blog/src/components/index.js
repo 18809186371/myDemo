@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom'
 import AsideContainer from '../container/AsideContainer';
 import HeadContainer from '../container/HeadContainer';
 import Affix from '../container/Affix';
+import Menutool from '../container/Menutool';
 import Banner from './Banner';
 import LogonContainer from '../container/LoginContainer';
 import { observer, inject } from 'mobx-react';
@@ -16,13 +17,15 @@ import { haderTitle } from '../userConfig';
         this.userInfo = sessionStorage.getItem('userInfo')
     }
     render() {
-        return this.props.loginStore.loginFlag?
-            <React.Fragment>
-                <HeadContainer title={haderTitle} />
-                <AsideContainer />
-                <Affix />
-                <Banner />
-            </React.Fragment> : <LogonContainer />
+        // this.props.loginStore.loginFlag?
+        return <React.Fragment>
+            <HeadContainer title={haderTitle} />
+            <AsideContainer />
+            <Menutool />
+            <Affix />
+            <Banner />
+        </React.Fragment>
+        // : <LogonContainer />
     }
 }
 

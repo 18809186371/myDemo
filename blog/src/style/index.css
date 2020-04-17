@@ -1,5 +1,6 @@
 @import '~antd/dist/antd.css';
 @import './container.css';
+@import './canvas.css';
 
 body {
   margin: 0;

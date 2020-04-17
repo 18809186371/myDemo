@@ -1,0 +1,39 @@
+{
+    "type":"image",
+    "data": [
+        {
+            "width": "",
+            "isSet": 1
+        },
+        {
+            "height": "",
+            "isSet": 1
+        },
+        {
+            "src": "",
+            "isSet": 1
+        },
+        {
+            "alt": "",
+            "isSet": 1
+        },
+        {
+            "position": {
+                "children": [
+                    "relative",
+                    "absolute",
+                    "fixed"
+                ]
+            },
+            "isSet": 1,
+            "coordinate": [
+                {
+                    "x": 0
+                },
+                {
+                    "y": 0
+                }
+            ]
+        }
+    ]
+}

@@ -42,12 +42,12 @@ const confirm = Modal.confirm;
             <Menu.Item>
                 <span onClick={this._handleLogOff}><Icon type="logout" style={{ fontSize: 10, paddingRight: 10 }} />注销</span> 
             </Menu.Item>
-            <Menu.Item>
+            {/* <Menu.Item>
                 <span onClick={this._toUserCenter}><Icon type="user" style={{ fontSize: 10, paddingRight: 10 }} />个人中心</span> 
             </Menu.Item>
             <Menu.Item>
                 <span onClick={this._toUserSetting}><Icon type="tool" style={{ fontSize: 10, paddingRight: 10 }} />个人设置</span> 
-            </Menu.Item>
+            </Menu.Item> */}
         </Menu>)
         return <div className="container_header" style={{ backgroundColor: this.props.containerStore.headColor }}>
             <ColorSelect updateColor={(color) => this.props.containerStore.changeColor(color)} />

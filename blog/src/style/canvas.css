@@ -1,0 +1,30 @@
+.canvasContainer {
+    border: 2px solid #000;
+    position: relative;
+    margin: 0 auto;
+    width: 404px;
+    height: 704px;
+    overflow: hidden;
+    left: 0;
+    right: 0;
+    top: 100px;
+    z-index: 0;
+    background-origin: border-box;
+}
+
+.border_down_box {  
+    width: 50px;
+    height: 50px;
+    float: left;
+    z-index: 0;
+    border-bottom: blanchedalmond solid 1px;
+}
+
+.border_right_down_box {
+    width: 50px;
+    height: 50px;
+    float: left;
+    z-index: 0;
+    border-right: blanchedalmond solid 1px;
+    border-bottom: blanchedalmond solid 1px;
+}

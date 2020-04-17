@@ -1,9 +1,10 @@
 import React from 'react';
 import { Form, Icon, Input, Button, message } from 'antd';
 import { observer, inject } from "mobx-react";
-import axios from 'axios';
-import { requestUrl } from '../util/config';
-import { withRouter } from 'react-router-dom'
+// import axios from 'axios';
+// import { requestUrl } from '../util/config';
+import { withRouter } from 'react-router-dom';
+import { username, password } from '../userConfig';
 
 message.config({ top: 300 })
 @inject('loginStore')
@@ -17,22 +18,29 @@ message.config({ top: 300 })
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
             if (!err) {
-                let param = { username: values.userName, password: values.password }
-                axios.post(`${requestUrl}/api/login`, param).then(res => {
-                    if(res.data.errorCode === '1') {
-                        window.setTimeout(message.success(res.data.errMsg), 500)
-                        this.props.loginStore.loginSubmit()
-                        this.props.history.push('/protal/show/home')
-                    } else {
-                        message.error(res.data.errMsg)
-                    }
-                }) 
+                // let param = { username: values.userName, password: values.password }
+                // axios.post(`${requestUrl}/api/login`, param).then(res => {
+                //     if(res.data.errorCode === '1') {
+                //         window.setTimeout(message.success(res.data.errMsg), 500)
+                //         this.props.loginStore.loginSubmit()
+                //         this.props.history.push('/protal/show/home')
+                //     } else {
+                //         message.error(res.data.errMsg)
+                //     }
+                // }) 
+                if(username === values.userName && password === values.password) {
+                    this.props.loginStore.loginSubmit()
+                    sessionStorage.setItem('username', values.userName)
+                    sessionStorage.setItem('password', values.password)
+                    this.props.history.push('/drog/virgin')
+                } else {
+                    message.error('密码有问题')
+                }
             }
         });
     }
 
     render() {
-        // 11111
         const { getFieldDecorator } = this.props.form;
         return <div className="container_login">
             <Form onSubmit={this.handleSubmit} className="login-form">

@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { ContextMenu, MenuItem, ContextMenuTrigger } from "react-contextmenu";
 
-class SettingComponent extends React.Component {
+class TestDataComponent extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -17,7 +17,7 @@ class SettingComponent extends React.Component {
         for (let i = 0; i < 45; i++) {
             data.push({
                 key: i,
-                title: `SettingComponent${i}`,
+                title: `TestDataComponent${i}`,
                 age: 24,
                 gender: i % 2 === 0 ? '男' : '女'
             })
@@ -42,4 +42,4 @@ class SettingComponent extends React.Component {
     }
 }
 
-export default withRouter(SettingComponent);
+export default withRouter(TestDataComponent);

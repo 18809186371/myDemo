@@ -23,12 +23,16 @@ const SubMenu = Menu.SubMenu;
                     inlineCollapsed={this.props.containerStore.sliderVisible}
                     style={{ width: this.props.containerStore.sliderVisible ? 100 : 195, height: this.height }}
                 >
-                    <SubMenu key="" title={<span><Icon type="folder" /><span>Navigation One</span></span>}>
-                        <Menu.Item key="1"><Link to="/show/home">List</Link></Menu.Item>
-                        <Menu.Item key="2"><Link to="/show/set">Set</Link></Menu.Item>
-                        <Menu.Item key="3"><Link to="/show/scroll">Scroll</Link></Menu.Item>
-                        <Menu.Item key="4"><Link to="/show/data">Show</Link></Menu.Item>
-                    </SubMenu>
+                    {/* <SubMenu key="" title={<span><Icon type="folder" /><span>Navigation One</span></span>}> */}
+                        <Menu.Item key="1"><Link to="/drog/virgin">原生拖动</Link></Menu.Item>
+                        <Menu.Item key="2"><Link to="/drog/library">Set</Link></Menu.Item>
+                        <Menu.Item key="3"><Link to="/drog/test">Test</Link></Menu.Item>
+                        <Menu.Item key="4"><Link to="/drogline/demo">DragLinedemo</Link></Menu.Item>
+                        <Menu.Item key="5"><Link to="/editor/demo">EditorDemo</Link></Menu.Item>
+                        <Menu.Item key="6"><Link to="/graph/demo">GraphDemo</Link></Menu.Item>
+                        {/* <Menu.Item key="3"><Link to="/show/scroll">Scroll</Link></Menu.Item>
+                        <Menu.Item key="4"><Link to="/show/data">Show</Link></Menu.Item> */}
+                    {/* </SubMenu>
                     <SubMenu key="sub2" title={<span><Icon type="table" /><span>Navigtion Two</span></span>}>
                         <Menu.Item key="5"><Link to="/view/dnd">右键表格</Link></Menu.Item>
                         <Menu.Item key="6"><Link to="/view/charts">图形可视化</Link></Menu.Item>
@@ -45,7 +49,7 @@ const SubMenu = Menu.SubMenu;
                     <SubMenu key="sub4" title={<span><Icon type="user" /><span>个人页</span></span>}>
                         <Menu.Item key="12"><Link to="/user/center">个人中心</Link></Menu.Item>
                         <Menu.Item key="13"><Link to="/user/setting">个人设置</Link></Menu.Item>
-                    </SubMenu>
+                    </SubMenu> */}
                 </Menu>
             </React.Fragment>
         );
